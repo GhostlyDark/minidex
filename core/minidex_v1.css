@@ -172,6 +172,11 @@ label{
 	padding: 6px 0px;
 }
 
+#global-back-button{
+	position:absolute;
+	top:32px;
+	left:0;
+}
 
 #select-language{
 	font-family:inherit;
