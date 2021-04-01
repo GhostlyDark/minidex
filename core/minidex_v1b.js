@@ -22,8 +22,6 @@ const BIT_ARRAY_SIZE=32;function BitArray(t){this.realLength=t;t%BIT_ARRAY_SIZE=
 function el(e){return document.getElementById(e)}
 function show(e){el(e).style.display=(/sprite/.test(el(e).className))?'inline-block':'block'}
 function hide(e){el(e).style.display='none'}
-function show2(e){el(e).style.visibility='visible'}
-function hide2(e){el(e).style.visibility='hidden'}
 function addEvent(e,v,f){e.addEventListener(v,f,false)}
 function empty(e){var e2=(typeof e==='string')?e2=el(e):e2=e;while(e2.firstChild)e2.removeChild(e2.firstChild)}
 function emptyBlock(e){var e2=(typeof e==='string')?e2=el(e):e2=e;while(e2.children.length>1)e2.removeChild(e2.lastChild)}
@@ -105,7 +103,7 @@ function getCurrentDexNumber(nationalId, regionalDexIndex){
 				return 'C'+formatDexNumber(REGIONAL_DEXES[regionalDexIndex][1].indexOf(nationalId)+1);
 		}
 
-		return '---';
+		return formatDexNumber(nationalId);
 	}
 }
 
@@ -159,11 +157,6 @@ function setAndroidColor(c){
 var currentDistanceFromHome=0;
 function pushState(url,doNotPush){
 	url=url.toLowerCase().replace(/[^\w\-]/g,'');
-
-	if(document.body.className==='menu-open')
-		hideMenu();
-
-
 	var nationalId=pokemonNameById.indexOf(url.replace(/-\d+$/,''));
 	if(nationalId>=1){
 		var form=0;
@@ -179,8 +172,6 @@ function pushState(url,doNotPush){
 	}else if(typeof locationsHash[url]==='number'){
 		showLocation(locationsHash[url]);
 		setAndroidColor('#e63636');
-	}else if(url==='menu'){
-		showMenu(true);
 	}else{
 		url='';
 
@@ -199,8 +190,6 @@ function pushState(url,doNotPush){
 
 		setAndroidColor('#202b37');
 	}
-
-
 
 	if(!doNotPush && currentDistanceFromHome<49){ /* firefox and chrome (and probably others) have a 50 history limit, if limit is reached, do not push any more states so home screen can  */
 		currentDistanceFromHome++;
@@ -269,9 +258,6 @@ function showPokemon(id,form){
 		}
 	}
 	var pokeNumber=getCurrentDexNumber(id, currentRegionalNumeration);
-	
-	/* set window title */
-	setWindowTitle('#'+pokeNumber+' '+poke.name);
 
 	el('pokemon-title').innerHTML='<span class="mono">#'+pokeNumber+'</span> '+poke.nameHTML;
 
@@ -470,12 +456,6 @@ function showPokemon(id,form){
 		tr.appendChild(td1);
 		el('extra-links').appendChild(tr);
 	}
-
-	/* smooth scroll to top */
-	if(currentDistanceFromHome===0)
-		goToTop(true);
-	else
-		goToTop();
 }
 
 
@@ -848,7 +828,6 @@ function showLocation(location){
 	if(LOCATIONS[location]){
 		el('location-title').innerHTML=localize(LOCATIONS[location].name);
 		el('location-icon').className='sprite location1';
-		setWindowTitle(localize(LOCATIONS[location].name));
 		renderLocationEncounters(LOCATIONS[location].encounters, '', LOCATIONS[location].showAsGrid);
 	}else{
 		console.error(location);
@@ -1089,8 +1068,16 @@ function createExternalLink(title, href){
 	return a;
 }
 function getAbilityLink(abilityIndex){
-	if(MinidexSettings.lang===4)
+	if(MinidexSettings.lang===1)
+		return 'https://www.pokepedia.fr/'+LANGS.ABILITIES[1][abilityIndex].replace(/ /g, '_')+'_(talent)'
+	else if(MinidexSettings.lang===2)
+		return 'https://www.pokewiki.de/'+LANGS.ABILITIES[2][abilityIndex].replace(/ /g, '_')
+	else if(MinidexSettings.lang===3)
+		return 'https://wiki.pokemoncentral.it/'+LANGS.ABILITIES[3][abilityIndex].replace(/ /g, '_')
+	else if(MinidexSettings.lang===4)
 		return 'https://www.wikidex.net/wiki/'+LANGS.ABILITIES[4][abilityIndex].replace(/ /g, '_')
+	else if(MinidexSettings.lang===5)
+		return 'https://wiki.ポケモン.com/wiki/'+LANGS.ABILITIES[5][abilityIndex].replace(/ /g, '_')
 	else if(MinidexSettings.lang===6)
 		return 'https://wiki.52poke.com/wiki/'+LANGS.ABILITIES[6][abilityIndex].replace(/ /g, '_')+'（特性）'
 	else
@@ -1098,8 +1085,16 @@ function getAbilityLink(abilityIndex){
 
 }
 function getMoveLink(moveIndex){
-	if(MinidexSettings.lang===4)
+	if(MinidexSettings.lang===1)
+		return 'https://www.pokepedia.fr/'+(MOVES[moveIndex][0][1] || MOVES[moveIndex][0][0]).replace(/ /g, '_')
+	else if(MinidexSettings.lang===2)
+		return 'https://www.pokewiki.de/'+(MOVES[moveIndex][0][2] || MOVES[moveIndex][0][0]).replace(/ /g, '_')
+	else if(MinidexSettings.lang===3)
+		return 'https://wiki.pokemoncentral.it/'+(MOVES[moveIndex][0][3] || MOVES[moveIndex][0][0]).replace(/ /g, '_')
+	else if(MinidexSettings.lang===4)
 		return 'https://www.wikidex.net/wiki/'+(MOVES[moveIndex][0][4] || MOVES[moveIndex][0][0]).replace(/ /g, '_')
+	else if(MinidexSettings.lang===5)
+		return 'https://wiki.ポケモン.com/wiki/'+(MOVES[moveIndex][0][5] || MOVES[moveIndex][0][0]).replace(/ /g, '_')
 	else if(MinidexSettings.lang===6)
 		return 'https://wiki.52poke.com/wiki/'+MOVES[moveIndex][0][6].replace(/ /g, '_')+'（招式）'
 	else
@@ -1608,7 +1603,8 @@ function createCaughtButton(regionalIndex){
 					refreshCaughtButton(el('dex-results').children[i].children[2]);
 			}
 		});		
-	}else{
+	}
+	else{
 		i.regionalIndex=regionalIndex;
 		refreshCaughtButton(i);
 	}
@@ -1807,11 +1803,6 @@ function calculateWeaknesses(){
 
 
 
-function hideDonateWarning(){
-	hide('donate-warning');
-	MinidexSettings.donateWarning=(new Date()).getTime();
-	MinidexSettings.save();
-}
 var MinidexSettings=(function(){
 	var IS_STORAGE_AVAILABLE=typeof(Storage)!=='undefined';
 
@@ -1835,12 +1826,11 @@ var MinidexSettings=(function(){
 	return{
 		/* default settings */
 		lang:defaultLanguage,
-		donateWarning:0,
 		caughtDatabase:null,
 
 		save:function(){
 			if(IS_STORAGE_AVAILABLE){
-				localStorage.setItem('minidex', JSON.stringify({lang:this.lang,donateWarning:this.donateWarning}));
+				localStorage.setItem('minidex', JSON.stringify({lang:this.lang}));
 				localStorage.setItem('minidex-'+GAME_ID, JSON.stringify(this));
 			}
 		},
@@ -1856,9 +1846,6 @@ var MinidexSettings=(function(){
 
 					if(typeof loadedSettings.lang==='number' && loadedSettings.lang>=0 && loadedSettings.lang<=6)
 						this.lang=loadedSettings.lang;
-
-					if(typeof loadedSettings.donateWarning==='number')
-						this.donateWarning=loadedSettings.donateWarning;
 				}
 
 				if(localStorage.getItem('minidex-'+GAME_ID)){
@@ -1946,6 +1933,7 @@ function homeDexAdd(nationalId, regionalDexIndex){
 
 	var a=document.createElement('a');
 	a.href=generatePokemonLink(nationalId, form);
+//	a.id= 'pkm-' + generatePokemonLink(nationalId, form).substring(1);
 	a.nationalId=nationalId;
 
 	addEvent(a, 'click', _clickLink);
@@ -2037,7 +2025,6 @@ function refreshSearchResults(){
 	}
 }
 
-
 function forceGoToHome(){
 	if(currentDistanceFromHome && !currentPoke) /* location */
 		window.history.go(-1);
@@ -2118,12 +2105,12 @@ function setLanguage(l){
 	
 
 	/* translate game selector */
-	var games=[];
-	var nGames=GAME_ID==='swsh'?2:GAMES.length;
-	for(var i=0; i<nGames; i++){
-		games.push(localize(GAMES[i]));
-	}
-	el('current-game').innerHTML=games.join(' / ');
+//	var games=[];
+//	var nGames=GAME_ID==='swsh'?2:GAMES.length;
+//	for(var i=0; i<nGames; i++){
+//		games.push(localize(GAMES[i]));
+//	}
+//	el('current-game').innerHTML=games.join(' / ');
 }
 function getRegionName(){
 	if(MinidexSettings.lang===6){
@@ -2205,57 +2192,17 @@ function addTouchEvents(){
 		//evt.preventDefault()
 	}, false);
 }
-  
-
-
-
-
-
-
-
 
 function focusSearch(){
 	el('search').focus();
 	el('search').select();
 }
 
-
-
-function showMenu(doNotPush){
-	document.body.className='menu-open';
-	reqAnimFrame(goToTop);
-	
-	if(!doNotPush)
-		pushState('menu');
-}
-function hideMenu(click){
-	if(click)
-		window.history.go(-1);
-	else
-		document.body.className='';
-}
-function toggleMenu(){
-	if(/menu-open/.test(document.body.className))
-		hideMenu(true);
-	else
-		showMenu();
-}
-
-
-
-
-
-
-
-
 function initialize(){
 	/* startup, load settings */
 	MinidexSettings.load();
 	el('select-language').value=MinidexSettings.lang;
 	setLanguage(MinidexSettings.lang);
-	if(!MinidexSettings.donateWarning || MinidexSettings.donateWarning<((new Date()).getTime()-1296000000)){
-		show('donate-warning');
-	}
 
 	/* merge all regional dexes into one, for searching/navigation purposes */
 	dexRegional=[];
@@ -2323,15 +2270,9 @@ function initialize(){
 	/* calculate icon images columns */
 	Icons.COLS=Icons.WIDTH/Icons.ICON_WIDTH;
 
-	/* menu events */
-	addEvent(el('overlay'), 'click', function(evt){
-		hideMenu(true);
-	});
-	addEvent(el('overlay2'), 'click', stopPropagation);
-	addEvent(el('button-menu'), 'click', toggleMenu);
+	/* update language */
 	addEvent(el('select-language'), 'change', function(evt){
 		setLanguage(this.selectedIndex);
-		hideMenu(true);
 		MinidexSettings.save();
 	});
 
@@ -2449,19 +2390,8 @@ function initialize(){
 	el('pokemon').children[0].appendChild(mainCaughtButton);
 
 	
-	
-	
-	
-	
-	
-	
-	if(MinidexSettings.checkUnknownLanguage()){
-		/* if language couldn't be detected and there is no language saved in settings, show menu */
-		showMenu();
-		el('select-language').focus();
-		MinidexSettings.save(); //force save so the nag won't appear next time
 
-	}else if(/#(\d{1,3}([\w\-]+)?|[\w+\-]+)$/.test(window.location.href)){
+	if(/#(\d{1,3}([\w\-]+)?|[\w+\-]+)$/.test(window.location.href)){
 		/* parse parameter */
 		var url=window.location.href.substring(window.location.href.indexOf('#'));
 		history.replaceState('', false, '#home');
@@ -2470,15 +2400,12 @@ function initialize(){
 	}else if(!IS_MOBILE){
 		focusSearch();
 	}
-	
-	
-	
-	
+		
 	
 	/* after app is fully loaded, start downloading competitive database, which is the biggest file but not a priority */
 	var script=document.createElement('script');
 	script.type='text/javascript';
-	script.src='../core/data/learnsets_gen'+(GAME_ID==='letsgo'?'7_letsgo':GENERATION)+'.js';
+	script.src='core/data/learnsets_gen'+(GAME_ID==='letsgo'?'7_letsgo':GENERATION)+'.js';
 	script.onload=function(){
 		competitiveDatabaseLoaded=true;
 		/* render learnsets if user is viewing a pokemon entry */
@@ -2490,3 +2417,25 @@ function initialize(){
 
 var competitiveDatabaseLoaded=false;
 addEvent(window,'load', initialize);
+
+document.addEventListener('DOMContentLoaded', function() {
+var collection = document.getElementById('collection'),
+competitive = document.getElementById('competitive')
+search = document.getElementById('search'),
+back_button = document.getElementById('back_button'),
+back_button_2 = document.getElementById('back_button_2');
+
+collection.addEventListener('click', showCollection);
+competitive.addEventListener('click', showCompetitive);
+search.addEventListener('focus', el('search').select());
+document.addEventListener('keydown', function(e){if(e.ctrlKey && e.which == 70) {e.preventDefault();search.focus()}})
+back_button.addEventListener('click', forceGoToHome);
+back_button_2.addEventListener('click', forceGoToHome);
+
+//document.getElementById('dex-results').addEventListener('click', function(e) {
+//if (document.getElementById('pokemon').style.display == 'block'){
+//back_button.href = '#pkm-' + window.location.href.substring(window.location.href.indexOf("#")+1);
+//back_button_2.href = '#pkm-' + window.location.href.substring(window.location.href.indexOf("#")+1)}});
+
+})
+if(location.origin != 'file://')navigator.serviceWorker.register('_cache_service_worker.js')

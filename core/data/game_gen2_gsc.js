@@ -13,7 +13,7 @@ const MAX_NATIONAL=251;
 
 
 const Icons={
-	IMAGE:'../core/icons_3ds.png',
+	IMAGE:'core/icons_3ds.png',
 	WIDTH:1280,
 	HEIGHT:960,
 	IS_BIG:false,

@@ -12,7 +12,7 @@ const MAX_NATIONAL=809;
 
 
 const Icons={
-	IMAGE:'../core/icons_letsgo.png',
+	IMAGE:'core/icons_letsgo.png',
 	WIDTH:1156,
 	HEIGHT:616,
 	IS_BIG:true,

@@ -28,7 +28,7 @@ const MAX_NATIONAL=898;
 
 
 const Icons={
-	IMAGE:'../core/icons_swsh.png',
+	IMAGE:'core/icons_swsh.png',
 	WIDTH:1632,
 	HEIGHT:1848,
 	IS_BIG:true,

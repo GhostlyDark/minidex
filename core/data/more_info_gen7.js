@@ -3,9 +3,9 @@ const MORE_INFO=[
 		title:['QR code',,,,'Código QR'],
 		getInfo:function(nationalId){
 			if(nationalId===25 && GAME_ID==='usum')
-				return './resources/gen7_qr_pikachu_cap.png'
+				return 'core/qr/gen7_qr_pikachu_cap.png'
 			else if(nationalId===801)
-				return './resources/gen7_qr_magearna.png'
+				return 'core/qr/gen7_qr_magearna.png'
 			return null
 		}
 	},{
@@ -45,10 +45,38 @@ const MORE_INFO=[
 			return 'https://www.smogon.com/dex/sm/pokemon/'+getPokeNameEn(nationalId).slug()+'/';
 		}
 	},{
+		title:'Poképédia',
+		getInfo:function(nationalId){
+			if(MinidexSettings.lang===1)
+				return 'https://www.pokepedia.fr/'+getPokeName(nationalId).replace(/ /g,'_');
+			return null
+		}
+	},{
+		title:'PokéWiki',
+		getInfo:function(nationalId){
+			if(MinidexSettings.lang===2)
+				return 'https://www.pokewiki.de/'+getPokeName(nationalId).replace(/ /g,'_');
+			return null
+		}
+	},{
+		title:'Pokémon Central Wiki',
+		getInfo:function(nationalId){
+			if(MinidexSettings.lang===3)
+				return 'https://wiki.pokemoncentral.it/'+getPokeName(nationalId).replace(/ /g,'_');
+			return null
+		}
+	},{
 		title:'Wikidex',
 		getInfo:function(nationalId){
 			if(MinidexSettings.lang===4)
 				return 'https://www.wikidex.net/wiki/'+getPokeName(nationalId).replace(/ /g,'_');
+			return null
+		}
+	},{
+		title:'ポケモンWiki',
+		getInfo:function(nationalId){
+			if(MinidexSettings.lang===5)
+				return 'https://wiki.ポケモン.com/wiki/'+getPokeName(nationalId).replace(/ /g,'_');
 			return null
 		}
 	},{
