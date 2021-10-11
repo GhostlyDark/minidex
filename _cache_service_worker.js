@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex';
-var PRECACHE_VERSION='v2';
+var PRECACHE_VERSION='v3';
 var PRECACHE_URLS=[
 'hub.htm',
 'manifest.json',
