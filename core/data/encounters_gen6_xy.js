@@ -815,7 +815,7 @@ const LOCATIONS=[
 	]
 },{
 	name:['Friend Safari','Safari des Amis','Kontaktsafari','Safari Amici','Safari Amistad',,'朋友狩猎'],encounters:[
-		{group:['Normal type',,,,'Tipo normal',,'一般（属性）'],showAsGrid:true,encounters:[
+		{group:['Normal type',,'Typ Normal',,'Tipo normal',,'一般（属性）'],showAsGrid:true,encounters:[
 			[190,,'grass','friend_safari_1'],
 			[206,,'grass','friend_safari_1'],
 			[216,,'grass','friend_safari_1'],
@@ -829,7 +829,7 @@ const LOCATIONS=[
 			[133,,'grass','friend_safari_3'],
 			[235,,'grass','friend_safari_3']
 		]},
-		{group:['Fighting type',,,,'Tipo lucha',,'格斗（属性）'],showAsGrid:true,encounters:[
+		{group:['Fighting type',,'Typ Kampf',,'Tipo lucha',,'格斗（属性）'],showAsGrid:true,encounters:[
 			[56,,'grass','friend_safari_1'],
 			[67,,'grass','friend_safari_1'],
 			[307,,'grass','friend_safari_1'],
@@ -842,7 +842,7 @@ const LOCATIONS=[
 			[297,,'grass','friend_safari_3'],
 			[447,,'grass','friend_safari_3']
 		]},
-		{group:['Flying type',,,,'Tipo volador',,'飞行（属性）'],showAsGrid:true,encounters:[
+		{group:['Flying type',,'Typ Flug',,'Tipo volador',,'飞行（属性）'],showAsGrid:true,encounters:[
 			[16,,'grass','friend_safari_1'],
 			[21,,'grass','friend_safari_1'],
 			[83,,'grass','friend_safari_1'],
@@ -856,7 +856,7 @@ const LOCATIONS=[
 			[662,,'grass','friend_safari_3'],
 			[701,,'grass','friend_safari_3']
 		]},
-		{group:['Poison type',,,,'Tipo veneno',,'毒（属性）'],showAsGrid:true,encounters:[
+		{group:['Poison type',,'Typ Gift',,'Tipo veneno',,'毒（属性）'],showAsGrid:true,encounters:[
 			[14,,'grass','friend_safari_1'],
 			[44,,'grass','friend_safari_1'],
 			[268,,'grass','friend_safari_1'],
@@ -870,7 +870,7 @@ const LOCATIONS=[
 			[454,,'grass','friend_safari_3'],
 			[544,,'grass','friend_safari_3']
 		]},
-		{group:['Ground type',,,,'Tipo tierra',,'地面（属性）'],showAsGrid:true,encounters:[
+		{group:['Ground type',,'Typ Boden',,'Tipo tierra',,'地面（属性）'],showAsGrid:true,encounters:[
 			[27,,'grass','friend_safari_1'],
 			[194,,'grass','friend_safari_1'],
 			[231,,'grass','friend_safari_1'],
@@ -883,7 +883,7 @@ const LOCATIONS=[
 			[536,,'grass','friend_safari_3'],
 			[660,,'grass','friend_safari_3']
 		]},
-		{group:['Rock type',,,,'Tipo roca',,'岩石（属性）'],showAsGrid:true,encounters:[
+		{group:['Rock type',,'Typ Gestein',,'Tipo roca',,'岩石（属性）'],showAsGrid:true,encounters:[
 			[299,,'grass','friend_safari_1'],
 			[525,,'grass','friend_safari_1'],
 			[557,,'grass','friend_safari_1'],
@@ -895,7 +895,7 @@ const LOCATIONS=[
 			[213,,'grass','friend_safari_3'],
 			[689,,'grass','friend_safari_3']
 		]},
-		{group:['Bug type',,,,'Tipo bicho',,'虫（属性）'],showAsGrid:true,encounters:[
+		{group:['Bug type',,'Typ Käfer',,'Tipo bicho',,'虫（属性）'],showAsGrid:true,encounters:[
 			[12,,'grass','friend_safari_1'],
 			[46,,'grass','friend_safari_1'],
 			[165,,'grass','friend_safari_1'],
@@ -909,7 +909,7 @@ const LOCATIONS=[
 			[214,,'grass','friend_safari_3'],
 			[666,,'grass','friend_safari_3']
 		]},
-		{group:['Ghost type',,,,'Tipo fantasma',,'幽灵（属性）'],showAsGrid:true,encounters:[
+		{group:['Ghost type',,'Typ Geist',,'Tipo fantasma',,'幽灵（属性）'],showAsGrid:true,encounters:[
 			[353,,'grass','friend_safari_1'],
 			[608,,'grass','friend_safari_1'],
 			[708,,'grass','friend_safari_2'],
@@ -919,7 +919,7 @@ const LOCATIONS=[
 			[442,,'grass','friend_safari_3'],
 			[623,,'grass','friend_safari_3']
 		]},
-		{group:['Steel type',,,,'Tipo acero',,'钢（属性）'],showAsGrid:true,encounters:[
+		{group:['Steel type',,'Typ Stahl',,'Tipo acero',,'钢（属性）'],showAsGrid:true,encounters:[
 			[82,,'grass','friend_safari_1'],
 			[303,,'grass','friend_safari_1'],
 			[597,,'grass','friend_safari_1'],
@@ -931,7 +931,7 @@ const LOCATIONS=[
 			[530,,'grass','friend_safari_3'],
 			[707,,'grass','friend_safari_3']
 		]},
-		{group:['Fire type',,,,'Tipo fuego',,'火（属性）'],showAsGrid:true,encounters:[
+		{group:['Fire type',,'Typ Feuer',,'Tipo fuego',,'火（属性）'],showAsGrid:true,encounters:[
 			[58,,'grass','friend_safari_1'],
 			[77,,'grass','friend_safari_1'],
 			[126,,'grass','friend_safari_1'],
@@ -944,7 +944,7 @@ const LOCATIONS=[
 			[654,,'grass','friend_safari_3'],
 			[662,,'grass','friend_safari_3']
 		]},
-		{group:['Water type',,,,'Tipo agua',,'水（属性）'],showAsGrid:true,encounters:[
+		{group:['Water type',,'Typ Wasser',,'Tipo agua',,'水（属性）'],showAsGrid:true,encounters:[
 			[98,,'grass','friend_safari_1'],
 			[224,,'grass','friend_safari_1'],
 			[400,,'grass','friend_safari_1'],
@@ -957,7 +957,7 @@ const LOCATIONS=[
 			[184,,'grass','friend_safari_3'],
 			[657,,'grass','friend_safari_3']
 		]},
-		{group:['Grass type',,,,'Tipo planta',,'草（属性）'],showAsGrid:true,encounters:[
+		{group:['Grass type',,'Typ Gras',,'Tipo planta',,'草（属性）'],showAsGrid:true,encounters:[
 			[43,,'grass','friend_safari_1'],
 			[114,,'grass','friend_safari_1'],
 			[191,,'grass','friend_safari_1'],
@@ -970,7 +970,7 @@ const LOCATIONS=[
 			[651,,'grass','friend_safari_3'],
 			[673,,'grass','friend_safari_3']
 		]},
-		{group:['Electric type',,,,'Tipo eléctrico',,'电（属性）'],showAsGrid:true,encounters:[
+		{group:['Electric type',,'Typ Elektro',,'Tipo eléctrico',,'电（属性）'],showAsGrid:true,encounters:[
 			[101,,'grass','friend_safari_1'],
 			[417,,'grass','friend_safari_1'],
 			[587,,'grass','friend_safari_1'],
@@ -984,7 +984,7 @@ const LOCATIONS=[
 			[523,,'grass','friend_safari_3'],
 			[596,,'grass','friend_safari_3']
 		]},
-		{group:['Psychic type',,,,'Tipo psíquico',,'超能力（属性）'],showAsGrid:true,encounters:[
+		{group:['Psychic type',,'Typ Psycho',,'Tipo psíquico',,'超能力（属性）'],showAsGrid:true,encounters:[
 			[63,,'grass','friend_safari_1'],
 			[96,,'grass','friend_safari_1'],
 			[326,,'grass','friend_safari_1'],
@@ -997,7 +997,7 @@ const LOCATIONS=[
 			[575,,'grass','friend_safari_3'],
 			[578,,'grass','friend_safari_3']
 		]},
-		{group:['Ice type',,,,'Tipo hielo',,'冰（属性）'],showAsGrid:true,encounters:[
+		{group:['Ice type',,'Typ Eis',,'Tipo hielo',,'冰（属性）'],showAsGrid:true,encounters:[
 			[225,,'grass','friend_safari_1'],
 			[361,,'grass','friend_safari_1'],
 			[363,,'grass','friend_safari_1'],
@@ -1010,7 +1010,7 @@ const LOCATIONS=[
 			[131,,'grass','friend_safari_3'],
 			[221,,'grass','friend_safari_3']
 		]},
-		{group:['Dragon type',,,,'Tipo dragón',,'龙（属性）'],showAsGrid:true,encounters:[
+		{group:['Dragon type',,'Typ Drache',,'Tipo dragón',,'龙（属性）'],showAsGrid:true,encounters:[
 			[444,,'grass','friend_safari_1'],
 			[611,,'grass','friend_safari_1'],
 			[148,,'grass','friend_safari_2'],
@@ -1019,7 +1019,7 @@ const LOCATIONS=[
 			[621,,'grass','friend_safari_3'],
 			[705,,'grass','friend_safari_3']
 		]},
-		{group:['Dark type',,,,'Tipo siniestro',,'恶（属性）'],showAsGrid:true,encounters:[
+		{group:['Dark type',,'Typ Unlicht',,'Tipo siniestro',,'恶（属性）'],showAsGrid:true,encounters:[
 			[262,,'grass','friend_safari_1'],
 			[274,,'grass','friend_safari_1'],
 			[624,,'grass','friend_safari_1'],
@@ -1033,7 +1033,7 @@ const LOCATIONS=[
 			[510,,'grass','friend_safari_3'],
 			[686,,'grass','friend_safari_3']
 		]},
-		{group:['Fairy type',,,,'Tipo hada',,'妖精（属性）'],showAsGrid:true,encounters:[
+		{group:['Fairy type',,'Typ Fee',,'Tipo hada',,'妖精（属性）'],showAsGrid:true,encounters:[
 			[175,,'grass','friend_safari_1'],
 			[209,,'grass','friend_safari_1'],
 			[281,,'grass','friend_safari_1'],
