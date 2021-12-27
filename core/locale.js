@@ -350,7 +350,7 @@ STRINGS:{
 'stone_fire':['Fire stone',,'Feuerstein',,'Piedra fuego',,'火之石'],
 'stone_thunder':['Thunder stone',,'Donnerstein',,'Piedra Trueno',,'雷之石'],
 'stone_water':['Water stone',,'Wasserstein',,'Piedra agua',,'水之石'],
-'stone_shiny':['Shiny stone',,'Shiny stone',,'Piedra día',,'光之石'],
+'stone_shiny':['Shiny stone',,'Leuchtstein',,'Piedra día',,'光之石'],
 'stone_dusk':['Dusk stone',,'Finsterstein',,'Piedra noche',,'暗之石'],
 'stone_dawn':['Dawn stone',,'Funkelstein',,'Piedra alba',,'觉醒之石'],
 'stone_ice':['Ice stone',,'Eisstein',,'Piedra hielo',,'冰之石'],
