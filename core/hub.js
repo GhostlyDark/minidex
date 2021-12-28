@@ -16,7 +16,8 @@ const GAMES=[
 	['Sun / Moon','Soleil / Lune','Sonne / Mond','Sole / Luna','Sol / Luna',,'太阳／月亮'],
 	['Ultra Sun / Ultra Moon','Ultra-Soleil / Ultra-Lune','Ultra Sonne / Ultra Mond','Ultra Sole / Ultra Luna','Ultra Sol / Ultra Luna',,'究极之日／究极之月'],
 	['Let\'s go!'],
-	['Sword / Shield','Épée / Bouclier','Schwert / Schild','Spada / Scudo','Espada / Escudo',,'剑／盾']
+	['Sword / Shield','Épée / Bouclier','Schwert / Schild','Spada / Scudo','Espada / Escudo',,'剑／盾'],
+	['Brilliant Diamond / Shining Pearl','Diamant Étincelant / Perle Scintillante','Strahlender Diamant / Leuchtende Perle','Diamante Lucente / Perla Splendente','Diamante Brillante / Perla Reluciente',,'晶灿钻石／明亮珍珠']
 ];
 
 function setLanguage(l){

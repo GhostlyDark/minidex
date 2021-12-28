@@ -14,12 +14,13 @@
 */
 
 var PRECACHE_ID='minidex';
-var PRECACHE_VERSION='v3';
+var PRECACHE_VERSION='v4';
 var PRECACHE_URLS=[
 'hub.htm',
 'manifest.json',
 
 'b2w2.htm',
+'bdsp.htm',
 'bw.htm',
 'dppt.htm',
 'frlg.htm',
@@ -33,6 +34,7 @@ var PRECACHE_URLS=[
 'usum.htm',
 'xy.htm',
 
+'core/bdsp_icons.png',
 'core/favicon192.png',
 'core/header_common.png',
 'core/header_gen1.png',
@@ -88,6 +90,7 @@ var PRECACHE_URLS=[
 'core/data/encounters_gen7_letsgo.js',
 'core/data/encounters_gen7_sm.js',
 'core/data/encounters_gen7_usum.js',
+'core/data/encounters_gen8_bdsp.js',
 'core/data/encounters_gen8_swsh.js',
 'core/data/game_gen1_rby.js',
 'core/data/game_gen2_gsc.js',
@@ -102,6 +105,7 @@ var PRECACHE_URLS=[
 'core/data/game_gen7_letsgo.js',
 'core/data/game_gen7_sm.js',
 'core/data/game_gen7_usum.js',
+'core/data/game_gen8_bdsp.js',
 'core/data/game_gen8_swsh.js',
 'core/data/learnsets_gen1.js',
 'core/data/learnsets_gen2.js',
@@ -112,6 +116,7 @@ var PRECACHE_URLS=[
 'core/data/learnsets_gen7.js',
 'core/data/learnsets_gen7_letsgo.js',
 'core/data/learnsets_gen8.js',
+'core/data/learnsets_gen8_bdsp.js',
 'core/data/more_info_gen1.js',
 'core/data/more_info_gen2.js',
 'core/data/more_info_gen3.js',
@@ -129,6 +134,7 @@ var PRECACHE_URLS=[
 'core/data/pokemon_gen7.js',
 'core/data/pokemon_gen7_letsgo.js',
 'core/data/pokemon_gen8.js',
+'core/data/pokemon_gen8_bdsp.js',
 
 'core/svg/back.svg',
 'core/svg/lang.svg'

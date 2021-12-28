@@ -539,7 +539,7 @@ function parseRateEncounter(rates){
 			return '';
 		return localize(rates);
 	}else if(typeof rates==='object'){
-		if(GENERATION===2 || GENERATION===4){
+		if(GENERATION===2 || GENERATION===4 || GAME_ID==='bdsp'){
 			return mergeRates(rates, ['morning','day','night']);
 		}else if(GENERATION===5){
 			return mergeRates(rates, ['spring','summer','autumn','winter']);
@@ -2120,7 +2120,7 @@ function getRegionName(){
 			return '城都地区';
 		else if(GAME_ID==='rse'||GAME_ID==='oras')
 			return '丰缘地区';
-		else if(GAME_ID==='dppt')
+		else if(GAME_ID==='dppt'||GAME_ID==='bdsp')
 			return '神奥地区';
 		else if(GENERATION===5)
 			return '合众地区';
@@ -2405,7 +2405,8 @@ function initialize(){
 	/* after app is fully loaded, start downloading competitive database, which is the biggest file but not a priority */
 	var script=document.createElement('script');
 	script.type='text/javascript';
-	script.src='core/data/learnsets_gen'+(GAME_ID==='letsgo'?'7_letsgo':GENERATION)+'.js';
+	if(GAME_ID==='bdsp'){script.src='core/data/learnsets_gen8_bdsp.js'}
+	else{script.src='core/data/learnsets_gen'+(GAME_ID==='letsgo'?'7_letsgo':GENERATION)+'.js'}
 	script.onload=function(){
 		competitiveDatabaseLoaded=true;
 		/* render learnsets if user is viewing a pokemon entry */
