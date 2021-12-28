@@ -2,7 +2,7 @@
 This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
 
 **Features:**
-* all regional+national Pokédex from RBY up to Sword and Shield+DLC
+* all regional+national Pokédex from RBY up to Brilliant Diamond and Shining Pearl
 * quick Pokémon search (name or number) at anytime
 * search by location or Pokémon type
 * click on a location title to get a list of all Pokémon in that location
